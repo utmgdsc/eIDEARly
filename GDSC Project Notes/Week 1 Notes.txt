@@ -1,0 +1,27 @@
+
+Working on
+DESIGN PHASE:
+	- getting familiar with tools
+	- Prof wants us to work with Daksh to complete a timeline
+		- start of first month is this week
+		- bring plan document explaining our design next week.
+			5 - 10 pages
+		- next page deciding whether we want to present
+		- also need to decide sprint meeting (3-4 sprints in total)
+			- deciding what we'd show at end of each period
+			- ideal: 3-4 weeks 
+			- deciding who does what
+				- Daksh will talk to group and decide
+
+		- Daksh will help the group if we're stuck, help to decide roles
+	
+-next week we'll get grading criteria from Prof. Bahar for mentor (Daksh) AND mentees
+-deciding deliverables
+	- deliver implementation and documents
+	- might ask other things like presentation/poster?
+
+- maybe have 2-3 members meeting, and then communicate meeting results to people who couldn't attend
+
+- next week we'll talk about which features we'll want to add and how to implement that features
+
+WHAT TO DO BEFORE NEXT MEETING:
