@@ -1,0 +1,18 @@
+https://docs.google.com/document/d/19Yf3A3RsFr53fL6IhtqdaRUsbLvmuap2u5eZytbsgoM/edit
+^^^ Evaluation Rubric
+few days late on milestones is fine, but no more
+expecting high-quality presentation (worth 10% mark)
+
+deadlines decided in a month
+
+Everything needs to be done by end of December
+
+Sprint 1: one month. Should be done by 
+finish sprint by night of 12th October
+End of sprint 1 presentation on 13th October meeting 
+
+will move docs to repository so everything is in one place (in .txt format)
+
+NEXT WEEK:
+Set up Gira (task managing software)
+need to learn good design principles, design patterns and task workflow

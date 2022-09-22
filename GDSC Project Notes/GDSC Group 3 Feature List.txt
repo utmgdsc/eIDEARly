@@ -1,0 +1,55 @@
+﻿Must Have
+	Good to Have
+	* An application that can take text and audio input and direct to other webpages
+* Pages and resources that adequately explain how to use common technology and apps in multiple formats ( text, video etc)
+* Three distinct sections of Phone, Internet and Applications
+* Appealing user interface design
+	* (HARD) A way to set up video chats in-app with representatives 
+* Multiple language support
+* A chatbot/AI that can decently identify the problem and give useful feedback
+* Database to store learning material
+	
+
+
+
+Tools:
+React native for front end
+* Expo https://expo.dev/ 
+
+
+Backend
+* JavaScript using Nodejs +  Express
+* Database with mongodb
+
+
+
+
+Overarching learning goals:
+* Good design patterns
+* Proper git workflow
+* Proper documentation
+* Testing
+
+
+Sprint 1 - 1 month (Due: 12 October)
+* Searching and audio searching of materials
+* App design
+* Displaying learning materials
+
+
+Sprint 2
+* Create UI buttons and panels to organize learning materials
+   * Search feature has to be adapted to work across panels
+* Creation of learning materials
+
+
+Sprint 3
+* Data base integration
+* Chat bot
+
+
+Sprint 4
+* Presentation and polish
+* Multiple languages
+* Continuing chat bot
+* Continuing data base

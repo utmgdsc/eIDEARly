@@ -1,0 +1,364 @@
+﻿- Regular progress reports (%5)
+* where the team explains how things are going,  what everyone worked on and what they’re doing next.
+* exit interviews 
+- Hitting the sprint milestones (%10)
+- Milestone presentations (%10)
+- Design and final project documents (%15)
+- Final presentation (%5)
+- Final project demo and working features (%45)
+- Poster Presentation (%10)
+
+
+
+
+
+
+Appendix A - 392 Per Sprint Project Evaluation (Individual)
+
+
+Section
+	Unacceptable
+	Marginal
+	Acceptable
+	Proficient
+	Communication
+	Student did not provide notice for absence, and did not communicate in Teams.
+	Student attended all weekly meetings, and was inactive on Teams.
+Did not make use of the platforms provided
+	Student attended all weekly meetings, and was active on Teams.
+Used of the communication platforms provided to some effect.
+	Student contributed during all weekly meetings, and was active on Teams.  
+Well use of structure of communication platforms
+	Progress  Reviews
+	Student conducted irregular and non-surface level comments on pull requests or documentation
+	Student conducted regular  surface level comments on pull requests or documentation
+	Student conducted irregular  informative comments on pull requests or documentation
+	Student conducted regular  informative comments on pull requests or documentation
+	Sprint Retro
+	Student completed at least 1 Sprint Retro topics.
+
+
+Student was unprepared or not present at the Sprint Retro.
+	Student completed at least 2 Sprint Retro topics.
+
+
+Student was unprepared for the Sprint Retro 
+	Student completed at least 3 Sprint Retro topics.
+
+
+Student was semi-prepared for the Sprint Retro 
+	Student completed at least 4 Sprint Retro topics.
+
+
+Student was well prepared for the Sprint Retro meeting
+	Sprint Progress
+	Marginal progress was made on less than 50% of stories assigned for that sprint
+Student was not present or did not participate in Sprint planning
+
+
+
+
+
+
+Student did not write or wrote unclear user stories
+	Marginal progress was made on 50% of stories assigned for that sprint
+Student participated in the planning of the next Sprint 
+
+
+
+
+
+
+Student wrote clear user stories with assistance
+	Progress was made on 50% of stories assigned for that sprint
+
+
+Student made minor contributions in the planning of the next Sprint 
+
+
+
+
+Student wrote clearly defined user stories
+	Progress was made on 75% of stories assigned for that sprint
+
+
+Student actively contributed value to the planning of the next Sprint 
+
+
+Student wrote concise and clear user stories
+	Maintainability 
+	Student did not contribute or the contributions to documentation were unclear.
+
+
+
+
+Student did not write any tests for their features.
+	Student made unclear or unhelpful additions to the documentation.
+
+
+
+
+Student wrote tests for their features. 
+	Student made minor additions to the User or Developer documentation
+
+
+Student wrote comprehensive tests.
+	Student contributed to the User or Developer documentation
+
+
+
+
+Student wrote comprehensive and well documented tests. 
+	________________
+
+
+Appendix B - 392 Milestone Evaluation (Group)
+
+
+Section
+	Unacceptable
+	Marginal
+	Acceptable
+	Proficient
+	Completion
+	Completion of less than 50% of planned features
+	Partial completion of  50% of planned features
+	Partial completion of  70% of planned features
+	Achieved 70% of planned features
+	Documentation
+	Documentation for the project is insufficient
+
+
+
+
+
+
+Developer documentation is missing major aspects of the project
+
+
+	Documentation for the project is unclear in places but is sufficient overall 
+
+
+Developer documentation lacks detail but covers the high level API
+
+
+	Documentation for the project is sufficient for those familiar with the project
+
+
+Documentation exists for developers of the application
+	Documentation written can be understood by people unfamiliar with the project
+
+
+Documentation is comprehensive and detailed for both developers and users
+	Participation/
+Initiative
+	Did not show interest or take initiative in the project.
+	Filed bugs they noticed in the system but did not go above and beyond their responsibilities
+	Filed bugs, expanded and planned for additional features, completed their assigned tasks well
+	Filed bugs, assisted in planning project scope, expanded and planned for additional features. Went above and beyond
+	Presentation
+	Did not complete their presentation
+	Completed their presentation but it lacked detail and depth
+	Completed their presentation well and conveyed project objective and progress
+	Explained their milestones and individual work on the project well, both functionally and technically
+	Appendix C - 392/492 Mentorship
+
+
+Section
+	Unacceptable
+	Marginal
+	Acceptable
+	Proficient
+	Code Quality
+	Automated code quality review tool scores the code base decreases on an average sprint over sprint.
+	Automated code quality review tool scores the codebase remains consistent on an average sprint over sprint.
+	Automated code quality review tool scores the codebase increases on an average sprint over sprint.
+	Automated code quality review tool scores the codebase increases significantly on an average sprint over sprint.
+	Communication
+(Digitally & in person)
+
+
+	Conduct no 1-on-1s with each team member.
+
+
+Engaged in a limited number of discussions with the team.
+	Conduct some 1-on-1s with each team member.
+
+
+Engaged in some discussions with the team.
+	Conduct regularly scheduled 1-on-1s with each team member.
+
+
+Engaged in regular discussions with the team
+	Conduct regularly scheduled 1-on-1s with each team member that fosters the student's personal growth through mentorship. 
+
+
+Engaged in regular discussions that moved the project forward through critical thinking. 
+	Participation
+
+
+	Did not direct students to significant resources in order to expose or expand on knowledge for solution approaches.
+
+
+Did not participate in or facilitate pair programming. 
+
+
+	Direct students to some resources in order to expose or expand on knowledge for solution approaches.  
+
+
+Did not actively participate in or facilitate  pair programming.
+	Direct students to some resources in order to expose or expand on knowledge for solution approaches.  
+Participated and facilitated pair programming. 
+	Directed students to quality resources in order to expose or expand on knowledge for solution approaches.  
+
+
+Actively sought to participate in or facilitate pair programming.
+	Facilitating Learning and Development
+	Did not run any working sessions to get students up to speed with tech and processes they are unfamiliar with. 
+	Facilitated working sessions for students to get a good starting point to approach an unfamiliar solutions.
+	Ran hands-on working sessions to get students up to speed with tech and processes they are unfamiliar with. 
+
+
+	Actively sought to run hands-on working sessions to get students up to speed with tech and processes they are unfamiliar with. 
+	Unblocking
+	Did not solve any blockers for students.
+	Helped students with some blockers. 
+	Took initiative to help students with their technical and creative blockers. 
+	Critically thought about and solved  technical and creative blockers for students. 
+	Guidance
+	Did not engage with the project enough to provide guidance. 
+	Guided students when requested. 
+
+
+Resolved opposing student opinions. 
+	Provided guidance to move the project forward. 
+
+
+Found harmonious resolution at the intersection of opposing student opinions.
+	Actively sought to provide guidance to move the project forward. 
+
+
+Recognized pivot solutions when necessary. 
+
+
+Found harmonious resolution at the intersection of opposing student opinions. 
+	
+
+________________
+
+
+Appendix D - 392/492 Product Management
+
+
+Section
+	Unacceptable
+	Marginal
+	Acceptable
+	Proficient
+	Team Communication
+	Did not facilitate planning meetings, sprint retro and stand up.
+
+
+Did Not write user stories or acceptance criteria.
+	Sometimes facilitate planning meetings, sprint retro or stand up.
+
+
+Wrote unclear user stories.
+	Facilitated planning meetings, sprint retro and stand up.
+
+
+Wrote user stories with acceptance criteria. 
+	Facilitated clear and concise planning meetings, sprint retro and stand up.
+
+
+Wrote easy to understand user stories with clear acceptance criteria. 
+	Planning
+	There is an unprioritized product backlog.
+
+
+Track team’s burndown metrics but does not adjust sprint scope.  
+
+
+Does not gather team processes issues based on sprint retros.  
+
+
+Story pointing accuracy decreases on average sprint over sprint. 
+
+
+Amount of incomplete story point increases on average sprint over sprint.
+
+
+	Maintain a somewhat  prioritized product backlog.
+
+
+Track team’s burndown metrics and somewhat adjust sprint scope.  
+
+
+Conduct some sprint retros.  
+
+
+Story pointing accuracy remains consistent on average sprint over sprint. 
+
+
+Amount of incomplete story point remains consistent on average sprint over sprint
+	Maintain a mostly  prioritized product backlog.
+
+
+Track team’s burndown metrics and mostly adjust sprint scope.  
+
+
+Address team processes issues based on sprint retros. 
+
+
+Story pointing accuracy slightly improves on average sprint over sprint. 
+
+
+Amount of incomplete story point slightly decreases on average sprint over sprint.
+	Maintain a prioritized product backlog.
+
+
+Track team’s burndown metrics and accurately adjust sprint scope   
+
+
+Improve team processes based on sprint retros. 
+
+
+Story pointing accuracy significantly improves on average sprint over sprint. 
+
+
+Amount of incomplete story point significantly decreases on average sprint over sprint.
+	Scrum
+	Does not facilitate regularly schedule stand up.
+	Facilitating some stand ups.
+	Facilitating regularly schedule stand ups.
+	Facilitating quality regularly schedule stand up.
+	Supervisor
+Communication
+
+
+	Did not sufficiently communicate project status to supervisor.
+	Communicated the progress over the sprint  by each student.
+
+
+
+
+
+
+Communicated  with supervisor about issues.
+	Communicated and provided writeup for the progress over the sprint by each student.
+
+
+
+
+Regular Communication with supervisor about issues.
+	Detailed documentation  and communication for sprint progress by each student.
+
+
+Proactive and regular communication with supervisor about issues.
+	Presentation
+	Did not sufficiently assist students in organizing the in-lecture lightning talks.
+	Organized in-lecture lightning talks for students to demo their software.
+	Organized in-lecture lightning talks for students to demo their software.
+
+
+Assisted students in planning and preparing for the demos
