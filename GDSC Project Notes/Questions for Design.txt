@@ -1,0 +1,3 @@
+Login for personalized experience?
+Do we want to be platform-agnostic?
+Do we have too much load on the front-end side of things?
