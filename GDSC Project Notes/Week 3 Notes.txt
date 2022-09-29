@@ -1,0 +1,19 @@
+WHAT EVERYONE DID:
+- start learning React
+- discussed and created basic layout
+- features list
+
+About text/audio input: external libraries or making on our own?
+- so far idea is using Node.js module
+- module needs to be started and have made progress on it
+
+using Github projects to host web app
+
+wants design document done on time (5 to 10 pages)
+- crc cards detailing design of cards and flowchart showing flow and required technologies
+
+ways to personalize;
+	- login system
+	- using cookies in session to save stuff to phone for future sessions
+		- better so that it's more accessible
+
