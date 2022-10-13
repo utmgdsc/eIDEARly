@@ -4,13 +4,12 @@ import MDX from "@mdx-js/runtime";
 
 // Provide custom components for markdown elements
 const components = {
-  h1: props => <Text style={{color: 'tomato'}} {...props} />,
-  p: props => <Text {...props} />,
-  b: props => <Text style ={styles.bold} {...props}/>,
-  br: props => <Text>{'\n'}</Text>,
-  img: props => <Image source = {...props}></Image>,
-  em: props => <Text style = {styles.italic} {...props}></Text>,
-  u: props => <Text style = {styles.underline} {...props}></Text>
+  h1: props => <View><Text style={{color: 'tomato'}} {...props} /></View>,
+  p: props => <View><Text {...props} /></View>,
+  strong: props => <View><Text style ={styles.bold} {...props}/></View>,
+  br: props => <View><Text>{'\n'}</Text></View>,
+  em: props => <View><Text style = {styles.italic} {...props}></Text></View>,
+  u: props => <View><Text style = {styles.underline} {...props}></Text></View>
 }
 // Provide variables that might be referenced by JSX
 const scope = {
@@ -24,3 +23,12 @@ export default function Markdown({mdx}) {
     </View>
   );
 }
+
+
+const styles = StyleSheet.create({
+  bold: {
+    fontWeight: 'bold'
+  }
+  
+
+});
