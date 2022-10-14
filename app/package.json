@@ -9,6 +9,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.1.5",
+    "@mdx-js/mdx": "^2.1.5",
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/native-stack": "^6.9.0",
     "expo": "~46.0.13",
