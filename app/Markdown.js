@@ -1,48 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import {StatusBar} from "expo-status-bar";
 import MDX from "@mdx-js/runtime";
-
-const UnorderedList = ({texts}) => {
-  return (
-    <Column>
-      {texts.map((t, index) => (
-        <Row key={index}>
-          <Column
-            style={{
-              alignSelf: 'flex-start',
-              justifyContent: 'flex-start',
-              marginRight: 12,
-              transform: [{scale: 2.5}],
-            }}>
-            <Text
-              style={{
-                alignSelf: 'flex-start',
-                justifyContent: 'flex-start',
-              }}>
-              {'\u2022'}
-            </Text>
-          </Column>
-          <Column>
-            <Text>{t}</Text>
-          </Column>
-        </Row>
-      ))}
-    </Column>
-  );
-};
-
-const Column = ({children,style})=>{
-   return <View
-      style={[{display: 'flex', flexDirection: 'column'},style]}>
-      {children}
-    </View>
-}
-const Row = ({children,style})=>{
-   return <View
-      style={[{display: 'flex', flexDirection: 'row'},style]}>
-      {children}
-    </View>
-}
 // Provide custom components for markdown elements
 const components = {
 
@@ -55,8 +13,7 @@ const components = {
   strong: props => <View><Text style ={styles.weights.bold} {...props}/></View>,
   br: props => <View><Text>{'\n'}</Text></View>,
   em: props => <View><Text style = {styles.italic} {...props}></Text></View>,
-  u: props => <View><Text style = {styles.underline} {...props}></Text></View>,
-  u1: props => <View><UnorderedList {...props} /></View>
+  u: props => <View><Text style = {styles.underline} {...props}></Text></View>
 }
 // Provide variables that might be referenced by JSX
 const scope = {
