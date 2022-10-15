@@ -4,4 +4,4 @@
 - Step 2. Pull the contents of this repository. 
 - Step 3. Add: import MDX from "@mdx-js/runtime" at the top of your file.
 - Step 4. Assign text to a variable. For example: const test = `# My first markdown test` **use "``"** to enclose the string.
-- Step 5. To render, call "<Markdown mdx = {test} />"
+- Step 5. To render, pass test variable into Markdown function.
