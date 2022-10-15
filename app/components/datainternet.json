@@ -1,0 +1,28 @@
+[
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "1",
+      "body": "FAQ 1 : Connect to Internet"
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "2",
+      "body": "FAQ 2 : Search on Internet"
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "3",
+      "body": "FAQ 3 : Security"
+    },
+
+    {
+        "userId": 1,
+        "id": 3,
+        "title": "3",
+        "body": "FAQ 4 : Communication"
+    }
+  
+  ]
