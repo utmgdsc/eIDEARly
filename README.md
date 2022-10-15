@@ -6,4 +6,4 @@
 - Step 4. Assign text to a variable. For example: const test = `# My first markdown test` **use "``"** to enclose the string.
 - Step 5. To render, pass test variable into Markdown function.'
 
-## Markdown cheat sheet [title](https://www.markdownguide.org/cheat-sheet/)
+## [Markdown cheat sheet](https://www.markdownguide.org/cheat-sheet/)
