@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
 import {StatusBar} from "expo-status-bar";
 import MDX from "@mdx-js/runtime";
 // Provide custom components for markdown elements
@@ -6,20 +6,26 @@ const components = {
 
   h1: props => <View><Text style={[styles.weights.w900, styles.h1fontsize, styles.fontcollection.TNR]} {...props} /></View>,
   h2: props => <View><Text style ={[styles.weights.bold, styles.h2fontsize]} {...props} /></View>,
-  h3: props => <View><Text style ={[styles.bold, styles.h3fontsize]} {...props} /></View>,
-  h4: props => <View><Text style ={[styles.bold, styles.h4fontsize]} {...props} /></View>,
-  h5: props => <View><Text style = {[styles.bold, styles.h5fontsize]} {...props} /></View>,
+  h3: props => <View><Text style ={[styles.weights.bold, styles.h3fontsize]} {...props} /></View>,
+  h4: props => <View><Text style ={[styles.weights.bold, styles.h4fontsize]} {...props} /></View>,
+  h5: props => <View><Text style = {[styles.weights.bold, styles.h5fontsize]} {...props} /></View>,
   p: props => <View><Text {...props} /></View>,
   strong: props => <View><Text style ={styles.weights.bold} {...props}/></View>,
   br: props => <View><Text>{'\n'}</Text></View>,
-  em: props => <View><Text style = {styles.italic} {...props}></Text></View>,
-  u: props => <View><Text style = {styles.underline} {...props}></Text></View>
+  u: props => <View><Text style = {styles.underline} {...props}></Text></View>,
+  blockquote: props => <View><Text><blockquote {...props} /></Text></View>,
+  em: props => <View><Text style = {styles.italic} {...props} /></View>,
+  i: props => <View><Text style = {styles.italic} {...props} /></View>,
+  sub: props => <View><Text style = {{lineHeight: 18}} {...props}/></View>,
+  sup: props => <View><Text style = {{lineHeight: 30}} {...props}/></View>,
+  a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL({...props})}> {...props}</Text></TouchableOpacity></View>,
+  img: props => <View><Image source = {{...props}} resizeMode="contain" style = {styles.logo} /></View>
+  // img prop can accept any string, have to implement RegEx here in order to only accept valid image input
 }
 // Provide variables that might be referenced by JSX
 const scope = {
     some: 'value'
 }
-
 export default function Markdown({mdx}) {
   return (
     <View>
@@ -30,9 +36,20 @@ export default function Markdown({mdx}) {
 
 
 const styles = StyleSheet.create({
+  logo: {
+    height: 80
+  },
+  italic: {
+    fontStyle: 'italic'
+  },
+  underline: {
+    textDecorationLine: 'underline'
+  },
+
   weights: {
     bold: {fontWeight: 'bold'},
     regular: {fontWeight: 'normal'},
+
     w100: {fontWeight: '100'},
     w200: {fontWeight: '200'},
     w300: {fontWeight: '300'},
@@ -70,3 +87,4 @@ const styles = StyleSheet.create({
   }
 
 });
+
