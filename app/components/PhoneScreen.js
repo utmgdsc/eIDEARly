@@ -1,14 +1,15 @@
 import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 //import PhoneScreenWelcome from "./phoneScreenWelcome.mdx";
+import MDX from "@mdx-js/runtime"
+import Markdown from './Markdown';
+
+const welcomeText = "Welcome to our hub for learning how to use your phone in today's society! Use the search bar below to ask your question, or click on any of our most frequently asked questions below!";
 
 function PhoneScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{paddingBottom: 20}}>Welcome to our hub for learning how to use your phone in today's society!
-        Use the search bar below to ask your question, or click on any of our most
-        frequently asked questions below!
-      </Text>
+      <Markdown mdx={welcomeText}/>
 
       <Text style={{fontWeight: "bold", fontSize: 20}}>
       Frequently Answered Questions
