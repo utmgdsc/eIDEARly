@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Linking, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Linking, TouchableOpacity, Image} from 'react-native';
 import {StatusBar} from "expo-status-bar";
 import MDX from "@mdx-js/runtime";
 // Provide custom components for markdown elements
@@ -18,8 +18,7 @@ const components = {
   i: props => <View><Text style = {styles.italic} {...props} /></View>,
   sub: props => <View><Text style = {{lineHeight: 18}} {...props}/></View>,
   sup: props => <View><Text style = {{lineHeight: 30}} {...props}/></View>,
-  //a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL(props.href)}> {props.title} {props.children}</Text></TouchableOpacity></View>,
-  //img: props => <View><Image source = {props.href} resizeMode="contain" style = {styles.logo} /></View>
+  a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL(props.href)}> {props.title} {props.children}</Text></TouchableOpacity></View>
   // img prop can accept any string, have to implement RegEx here in order to only accept valid image input
 }
 // Provide variables that might be referenced by JSX
@@ -37,7 +36,8 @@ export default function Markdown({mdx}) {
 
 const styles = StyleSheet.create({
   logo: {
-    height: 80
+    height: 80,
+    width: 50
   },
   italic: {
     fontStyle: 'italic'
