@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-
+import Markdown from './Markdown'
 function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Welcome to elDEARly</Text>
+      <Text><Markdown mdx = {`# Welcome to elDEARly`}/></Text>
       <Button
         title="Phone"
         onPress={() => navigation.navigate('Phone')}
