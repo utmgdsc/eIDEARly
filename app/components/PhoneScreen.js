@@ -83,6 +83,7 @@ Frequently Asked Questions
         style={styles.searchstyle}   
         onChangeText={(text) => searchFilterFunction(text)}
         onClear={(text) => searchFilterFunction('')}
+        onClearPress={(text) => searchFilterFunction('')}
         />
          <FlatList
           data={filteredDataSource}
