@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import logo from './logo.png';
 import people from './oldpeople.png';
+import Markdown from "./Markdown";
 
 TouchableOpacity.defaultProps = { activeOpacity: 0.5 };
 
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
 
   },
   text: {
-    fontSize:'20',
+    fontSize:20,
     color:'white',
     fontFamily: 'KohinoorDevanagari-Semibold',
     position:'absolute',

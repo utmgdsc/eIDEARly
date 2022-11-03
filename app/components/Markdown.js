@@ -18,7 +18,7 @@ const components = {
   i: props => <View><Text style = {styles.italic} {...props} /></View>,
   sub: props => <View><Text style = {{lineHeight: 18}} {...props}/></View>,
   sup: props => <View><Text style = {{lineHeight: 30}} {...props}/></View>,
-  a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL(props.href)}> {props.title} {props.children}</Text></TouchableOpacity></View>
+  //a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL(props.href)}> {props.title} {props.children}</Text></TouchableOpacity></View>
   // img prop can accept any string, have to implement RegEx here in order to only accept valid image input
 }
 // Provide variables that might be referenced by JSX

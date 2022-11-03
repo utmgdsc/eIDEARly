@@ -3,10 +3,11 @@ import React, { useState, UseState, useEffect} from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, SafeAreaView, FlatList, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import SearchBar from "react-native-dynamic-search-bar";
+import Markdown from './Markdown';
 //import PhoneScreenWelcome from "./phoneScreenWelcome.mdx";
 
 
-function InternetScreen() {
+function InternetScreen({ navigation }) {
 
   const [Search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
@@ -24,8 +25,8 @@ function InternetScreen() {
     if (text) {
   
       const newData = masterDataSource.filter(function (item) {
-        const itemData = item.body
-          ? item.body.toUpperCase().trim()
+        const itemData = item.title
+          ? item.title.toUpperCase().trim()
           : ''.toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
@@ -44,9 +45,10 @@ function InternetScreen() {
       // Flat List Item
       <Text
         style={styles.button}
-        onPress={() => getItem(item)}>
+        //onPress={() => getItem(item)}>
+        onPress={() => navigation.navigate(item.link)}>
         
-          {item.body.toUpperCase()}
+          {item.title.toUpperCase()}
       </Text>
     );
   };
@@ -64,7 +66,7 @@ function InternetScreen() {
     colors={['#8FA5A8', '#8FA5A8', '#E6B1B1']}
       style={styles.container}
     >
-   
+
 <Text style={{fontSize:50, fontStyle:'italic', color:'white', fontWeight:'bold', marginTop:50}}>Internet</Text> 
 <Text style={{paddingBottom: 20, textAlign:'center', color:'white', padding:30}}>Welcome to our hub for learning how to use your phone in today's society!
   Use the search bar below to ask your question, or click on any of our most
@@ -129,7 +131,7 @@ const styles = StyleSheet.create({
 
   },
   text: {
-    fontSize:'20',
+    fontSize:20,
     color:'white',
     fontFamily: 'KohinoorDevanagari-Semibold',
     position:'absolute',
