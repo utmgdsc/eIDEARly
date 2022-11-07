@@ -1,0 +1,25 @@
+Daksh wants one person to do design for all pages
+	- one person to create page component, another for navigation components, another for learning materials, text/audio search, etc.
+	- reusable components? 
+	- wants a back button
+
+neha on text search
+
+me on landing pages:
+	- passing in components using props
+
+learning materials:
+- using markdown to create learning materials
+	-referencing components to render them
+
+
+app is a phone
+
+moving presentation to oct 20, but design document still due at end of reading week
+
+no need for authentication flows, 
+
+start off by writing the structure of the design document, then write down component details and class interactions as they are completed
+OR
+
+neha making basic template of the document
