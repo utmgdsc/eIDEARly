@@ -6,7 +6,6 @@ import people from './oldpeople.png';
 
 TouchableOpacity.defaultProps = { activeOpacity: 0.5 };
 
-// This is the main page of the app
 function HomeScreen({ navigation }) {
   return (
     <LinearGradient

@@ -5,7 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import SearchBar from "react-native-dynamic-search-bar";
 //import PhoneScreenWelcome from "./phoneScreenWelcome.mdx";
 
-
+//this is App Screen 
 function AppScreen() {
 
   const [Search, setSearch] = useState('');
