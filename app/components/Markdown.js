@@ -4,19 +4,19 @@ import MDX from "@mdx-js/runtime";
 // Provide custom components for markdown elements
 const components = {
 
-  h1: props => <View><Text style={[styles.weights.w900, styles.h1fontsize, styles.fontcollection.TNR]} {...props} /></View>,
-  h2: props => <View><Text style ={[styles.weights.bold, styles.h2fontsize]} {...props} /></View>,
-  h3: props => <View><Text style ={[styles.weights.bold, styles.h3fontsize]} {...props} /></View>,
-  h4: props => <View><Text style ={[styles.weights.bold, styles.h4fontsize]} {...props} /></View>,
-  h5: props => <View><Text style = {[styles.weights.bold, styles.h5fontsize]} {...props} /></View>,
-  p: props => <View><Text {...props} /></View>,
-  strong: props => <View><Text style ={styles.weights.bold} {...props}/></View>,
+  h1: props => <View><Text style={[styles.c, styles.weights.w900, styles.h1fontsize, styles.fontcollection.TNR]} {...props} /></View>,
+  h2: props => <View><Text style ={[styles.c, styles.weights.bold, styles.h2fontsize]} {...props} /></View>,
+  h3: props => <View><Text style ={[styles.c, styles.weights.bold, styles.h3fontsize]} {...props} /></View>,
+  h4: props => <View><Text style ={[styles.c, styles.weights.bold, styles.h4fontsize]} {...props} /></View>,
+  h5: props => <View><Text style = {[styles.c, styles.para_align, styles.weights.bold, styles.h5fontsize]} {...props} /></View>,
+  p: props => <View><Text style = {[styles.c, ]} {...props} /></View>,
+  strong: props => <View><Text style ={[styles.weights.bold, styles.c]} {...props}/></View>,
   br: props => <View><Text>{'\n'}</Text></View>,
-  u: props => <View><Text style = {styles.underline} {...props}></Text></View>,
-  blockquote: props => <View><Text><blockquote {...props} /></Text></View>,
-  em: props => <View><Text style = {styles.italic} {...props} /></View>,
-  i: props => <View><Text style = {styles.italic} {...props} /></View>,
-  sub: props => <View><Text style = {{lineHeight: 18}} {...props}/></View>,
+  u: props => <View><Text style = {[styles.c, styles.underline]} {...props}></Text></View>,
+  blockquote: props => <View><Text><blockquote style = {styles.c} {...props} /></Text></View>,
+  em: props => <View><Text style = {[styles.c, styles.italic]} {...props} /></View>,
+  i: props => <View><Text style = {[styles.c, styles.italic]} {...props} /></View>,
+  sub: props => <View><Text style =  {{lineHeight: 18}}  {...props}/></View>,
   sup: props => <View><Text style = {{lineHeight: 30}} {...props}/></View>,
   a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL(props.href)}> {props.title} {props.children}</Text></TouchableOpacity></View>
   // img prop can accept any string, have to implement RegEx here in order to only accept valid image input
@@ -35,6 +35,13 @@ export default function Markdown({mdx}) {
 
 
 const styles = StyleSheet.create({
+  para_align: {
+    textAlign: "center"
+
+  },
+  c: {
+    color: "white"
+  },
   logo: {
     height: 80,
     width: 50
