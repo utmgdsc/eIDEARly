@@ -4,15 +4,17 @@ import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, Saf
 import { LinearGradient } from 'expo-linear-gradient';
 import SearchBar from "react-native-dynamic-search-bar";
 import Markdown from './Markdown';
+import * as FileSystem from "expo-file-system"
+import MaterialDisplay from './Internet-LM/LMDisplayer';
 //import PhoneScreenWelcome from "./phoneScreenWelcome.mdx";
 
 
-function InternetScreen({ navigation }) {
+function InternetScreen({ navigation, setMaterial }) {
 
   const [Search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
-
+  
 
   useEffect(() => {
 
@@ -38,6 +40,21 @@ function InternetScreen({ navigation }) {
       setSearch(text);
     }
   };
+
+  async function getDirectory(uri){
+    if (uri == null){
+      alert("Null input");
+      return;
+    }
+    const dir = await FileSystem.getInfoAsync(uri);
+    if (dir.exists){
+      const files = await FileSystem.readDirectoryAsync(uri);
+      alert(files.length);
+    }
+    else{
+      alert("Directory does not exist");
+    }
+  }
  
 
   const ItemView = ({item}) => {
@@ -45,8 +62,11 @@ function InternetScreen({ navigation }) {
       // Flat List Item
       <Text
         style={styles.button}
-        //onPress={() => getItem(item)}>
-        onPress={() => navigation.navigate(item.link)}>
+        onPress={() => {
+          setMaterial("# Hi");
+          navigation.navigate('MD');
+          }}>
+        
         
           {item.title.toUpperCase()}
       </Text>
@@ -66,6 +86,10 @@ function InternetScreen({ navigation }) {
     colors={['#8FA5A8', '#8FA5A8', '#E6B1B1']}
       style={styles.container}
     >
+
+    <Markdown mdx = {FileSystem.documentDirectory}/>
+
+    
 
 <Text style={{fontSize:50, fontStyle:'italic', color:'white', fontWeight:'bold', marginTop:50}}>Internet</Text> 
 <Text style={{paddingBottom: 20, textAlign:'center', color:'white', padding:30}}>Welcome to our hub for learning how to use your phone in today's society!

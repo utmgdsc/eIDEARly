@@ -5,12 +5,11 @@ import Markdown from '../Markdown';
 import * as FileSystem from 'expo-file-system';
 
 
-function SearchEnginesMaterial()
+function MaterialDisplay({navigation, material})
 {
-  //const content = FileSystem.readAsStringAsync()
     return(
     <LinearGradient colors={['#8FA5A8', '#8FA5A8', '#E6B1B1']} style={styles.container}>
-        <Markdown mdx = "# Hi" />
+        <Markdown mdx = {material} />
         
     </LinearGradient>
     );
@@ -58,4 +57,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default SearchEnginesMaterial;
+export default MaterialDisplay;
