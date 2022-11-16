@@ -14,7 +14,7 @@ import MaterialDisplay from './components/Internet-LM/LMDisplayer';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  const [material, setMaterial] = React.useState("");
+  const [material, setMaterial] = React.useState(``);
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
