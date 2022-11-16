@@ -4,7 +4,9 @@ export function getMaterialsText(id){
         `
         Hi
         
-        It\'s a me Mario`,
+        It's a me Mario
+        
+        -poggers`,
         `# I am a pretty butterfly. 
         
         Look at me, flying in the wind. 
@@ -14,19 +16,22 @@ export function getMaterialsText(id){
         `
         # Search Engines vs Web Browsers
         
-        In this tutorial we will explain the difference between a search engine and a web <br>owser. 
+        In this tutorial we will explain the difference between a search engine and a web browser. 
         
-        ## Learning Criteria<br><br>By the end of this section, you will have learned the following:
+        ## Learning Criteria
         
-        - What is a web browser?
-        - What is a website?
-        - What is a search engine?
-        - Why Confusion may come between the terms
+        By the end of this section, you will have learned the following:
+        
+        -What is a web browser?
+        -What is a website?
+        -What is a search engine?
+        -Why Confusion may come between the terms
 
         ## What Is A Web Browser?
-        A web browser is a program that can access the internet and let you visit webpages. Webpages is the name for files on the internet, and are often<br>called simply \"pages\".
+        A web browser is a program that can access the internet and let you visit webpages. Webpages is the name for files on the internet, and are often
+        called simply "pages".
         
-        Examples of web <br>owsers are Google Chrome, Safari, Microsoft Edge and it\'s older version Internet Explorer.
+        Examples of web browsers are Google Chrome, Safari, Microsoft Edge and it's older version Internet Explorer.
         
         ## What is a Website?
         
@@ -42,10 +47,10 @@ export function getMaterialsText(id){
         
         ## Where Does All The Confusion Come From?
         
-        It is easy to get the terms \"web browser\" and \"search engine\" mixed up. Often web browsers already have a default search engine built in,
+        It is easy to get the terms "web browser" and "search engine" mixed up. Often web browsers already have a default search engine built in,
         such that when you use the bar on the top of a web browser, it also is the input for the search engine. 
         
-        Also, companies that run search engines may also have their own web browsers. For example, Google has both it\'s search engine, but also has it\'s
+        Also, companies that run search engines may also have their own web browsers. For example, Google has both it's search engine, but also has it's
         own web browser Google Chrome, that starts with the Google search engine. Microsoft has the Microsoft Edge web browser, that also has the Bing search
         engine made by Microsoft. 
         
