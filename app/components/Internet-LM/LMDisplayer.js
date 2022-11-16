@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, Saf
 import { LinearGradient } from 'expo-linear-gradient';
 import Markdown from '../Markdown';
 import * as FileSystem from 'expo-file-system';
+import { ScrollView } from 'react-native';
 
 
 
@@ -11,8 +12,9 @@ function MaterialDisplay({navigation, material})
   
     return(
     <LinearGradient colors={['#8FA5A8', '#8FA5A8', '#E6B1B1']} style={styles.container}>
-        
-        <Markdown mdx = {material} />
+        <ScrollView>
+          <Markdown mdx = {material} />
+        </ScrollView>
         
         
     </LinearGradient>
