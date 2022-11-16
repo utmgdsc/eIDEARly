@@ -5,11 +5,14 @@ import Markdown from '../Markdown';
 import * as FileSystem from 'expo-file-system';
 
 
+
 function MaterialDisplay({navigation, material})
 {
     return(
     <LinearGradient colors={['#8FA5A8', '#8FA5A8', '#E6B1B1']} style={styles.container}>
+        
         <Markdown mdx = {material} />
+        
         
     </LinearGradient>
     );

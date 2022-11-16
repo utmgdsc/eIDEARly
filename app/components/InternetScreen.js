@@ -4,9 +4,11 @@ import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, Saf
 import { LinearGradient } from 'expo-linear-gradient';
 import SearchBar from "react-native-dynamic-search-bar";
 import Markdown from './Markdown';
-import * as FileSystem from "expo-file-system"
+import * as FileSystem from "expo-file-system";
+import { Asset } from 'expo-asset';
 import MaterialDisplay from './Internet-LM/LMDisplayer';
-//import PhoneScreenWelcome from "./phoneScreenWelcome.mdx";
+import { getMaterialsText } from './Internet-LM/getMaterialsText';
+
 
 
 function InternetScreen({ navigation, setMaterial }) {
@@ -14,6 +16,8 @@ function InternetScreen({ navigation, setMaterial }) {
   const [Search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
+
+  const [localMaterialUris, setlocalMaterialUris] = useState([]);
   
 
   useEffect(() => {
@@ -21,6 +25,7 @@ function InternetScreen({ navigation, setMaterial }) {
     const customData = require('./datainternet.json');
     setFilteredDataSource(customData);
         setMasterDataSource(customData);
+        getMaterials();
   }, []);
  
   const searchFilterFunction = (text) => {
@@ -55,6 +60,20 @@ function InternetScreen({ navigation, setMaterial }) {
       alert("Directory does not exist");
     }
   }
+
+  async function getMaterials(){
+    const uris = ["./Internet-LM/internet-lm/BasicInternetSafety.txt", 
+    "./Internet-LM/internet-lm/Connecting to The Internet.txt", 
+    "./Internet-LM/internet-lm/SearchEnginesAndWebBrowsers.txt",
+    "./Internet-LM/internet-lm/UsingGoogleLikeAPro"];
+
+    //const localUris = uris.map(uri => Asset.loadAsync(require(uri)));
+
+    const localUri = await Asset.loadAsync(require("./oldpeople.png"));
+
+    console.log(localUri);
+
+  }
  
 
   const ItemView = ({item}) => {
@@ -63,7 +82,8 @@ function InternetScreen({ navigation, setMaterial }) {
       <Text
         style={styles.button}
         onPress={() => {
-          setMaterial("# Hi");
+          setMaterial(getMaterialsText(item.id));
+          //setMaterial("# Hi \n How are you?")
           navigation.navigate('MD');
           }}>
         
