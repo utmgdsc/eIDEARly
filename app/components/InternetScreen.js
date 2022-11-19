@@ -3,29 +3,37 @@ import React, { useState, UseState, useEffect} from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, SafeAreaView, FlatList, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import SearchBar from "react-native-dynamic-search-bar";
-//import PhoneScreenWelcome from "./phoneScreenWelcome.mdx";
+import Markdown from './Markdown';
+import * as FileSystem from "expo-file-system";
+import { Asset } from 'expo-asset';
+import MaterialDisplay from './Internet-LM/LMDisplayer';
+import { getMaterialsText } from './Internet-LM/getMaterialsText';
 
 
-function InternetScreen() {
+
+function InternetScreen({ navigation, setMaterial }) {
 
   const [Search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
 
+  const [localMaterialUris, setlocalMaterialUris] = useState([]);
+  
 
   useEffect(() => {
 
     const customData = require('./datainternet.json');
     setFilteredDataSource(customData);
         setMasterDataSource(customData);
+        getMaterials();
   }, []);
  
   const searchFilterFunction = (text) => {
     if (text) {
   
       const newData = masterDataSource.filter(function (item) {
-        const itemData = item.body
-          ? item.body.toUpperCase().trim()
+        const itemData = item.title
+          ? item.title.toUpperCase().trim()
           : ''.toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
@@ -37,6 +45,35 @@ function InternetScreen() {
       setSearch(text);
     }
   };
+
+  async function getDirectory(uri){
+    if (uri == null){
+      alert("Null input");
+      return;
+    }
+    const dir = await FileSystem.getInfoAsync(uri);
+    if (dir.exists){
+      const files = await FileSystem.readDirectoryAsync(uri);
+      alert(files.length);
+    }
+    else{
+      alert("Directory does not exist");
+    }
+  }
+
+  async function getMaterials(){
+    const uris = ["./Internet-LM/internet-lm/BasicInternetSafety.txt", 
+    "./Internet-LM/internet-lm/Connecting to The Internet.txt", 
+    "./Internet-LM/internet-lm/SearchEnginesAndWebBrowsers.txt",
+    "./Internet-LM/internet-lm/UsingGoogleLikeAPro"];
+
+    //const localUris = uris.map(uri => Asset.loadAsync(require(uri)));
+
+    const localUri = await Asset.loadAsync(require("./oldpeople.png"));
+
+    console.log(localUri);
+
+  }
  
 
   const ItemView = ({item}) => {
@@ -44,9 +81,14 @@ function InternetScreen() {
       // Flat List Item
       <Text
         style={styles.button}
-        onPress={() => getItem(item)}>
+        onPress={() => {
+          setMaterial(getMaterialsText(item.id));
+          //setMaterial("# Hi \n How are you?")
+          navigation.navigate('MD');
+          }}>
         
-          {item.body.toUpperCase()}
+        
+          {item.title.toUpperCase()}
       </Text>
     );
   };
@@ -64,7 +106,11 @@ function InternetScreen() {
     colors={['#8FA5A8', '#8FA5A8', '#E6B1B1']}
       style={styles.container}
     >
-   
+
+    <Markdown mdx = {FileSystem.documentDirectory}/>
+
+    
+
 <Text style={{fontSize:50, fontStyle:'italic', color:'white', fontWeight:'bold', marginTop:50}}>Internet</Text> 
 <Text style={{paddingBottom: 20, textAlign:'center', color:'white', padding:30}}>Welcome to our hub for learning how to use your phone in today's society!
   Use the search bar below to ask your question, or click on any of our most
@@ -129,7 +175,7 @@ const styles = StyleSheet.create({
 
   },
   text: {
-    fontSize:'20',
+    fontSize:20,
     color:'white',
     fontFamily: 'KohinoorDevanagari-Semibold',
     position:'absolute',

@@ -1,0 +1,45 @@
+# Connecting to The Internet
+
+## Learning Criteria
+
+In this tutorial we will cover the following topics:
+- Finding internet settings on a phone
+- Finding internet settings on a computer
+- What is a Wi-Fi Network?
+- Connecting to Wi-Fi
+
+## Phone Internet Settings
+
+No matter the type of phone, there is always a settings app that you can use to check your phone's settings; it almost always
+has a gear icon and is called "Settings" 
+
+If you open the app (by tapping on it), on Apple you will see at the top of the list of options
+Wifi, which if tapped on will bring you to the settings you need.
+
+If opening on a Samsung or Google Pixel phone, you will instead find a connections option, which if clicked on will bring another list of 
+options. On the top of the list you should be able to find the Wifi option, which if tapped will bring you to the Wifi settings.
+
+## Computer Internet Settings
+
+On a computer, you can access the Internet settings in a few different ways. One way is that you open the settings in your computer and 
+search for the network and internet option to get to the Wifi option. Another way is to go onto the toolbar (the bar with icons at the bottom) and
+click on the icon that resembles 3 or 4 waves radiating outwards; this brings you directly to the Wifi settings.
+
+## What the heck is Wifi?
+
+You may notice that even though this tutorial is talking about connecting to the Internet, we are talking about the Wifi settings. Wifi, short for
+wireless fidelity, is the term for the wireless network that connects nearby to each other. What happens is that the Wifi is 
+typically managed by a device called the "router", and that router itself is connected to the larger network that is the Internet. 
+Hence to get connected to the Internet, you need to connect to the network near you, or the Wifi.
+
+## How to Connect to WiFi?
+
+Once you have opened up the WiFi settings, you will see a list of Wifi networks that you can connect to. Some may have a lock symbol next to
+them; that means that this network can only be used by someone that knows the password. To try to connect to a network, you need to tap or click on
+the network name, and if there is a connect option press connect. On phones you only need to tap on the network name to try connecting.
+If prompted for the password, type in the password and confirm; if you get it right the phone will continue to try and connect to the network.
+Once the connection process is completed, you should see that the network name now says "Connected" underneath; this means that you have
+connected to the Wifi! If it says "No intenet" however, it means this Wifi network does not have the connection to the greater Internet, so you need
+to try a different network.
+
+## Further Resources
