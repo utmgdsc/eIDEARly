@@ -1,0 +1,29 @@
+[
+    {
+      "userId": 1,
+      "id": 1,
+      "title": "How To Connect To The Internet",
+      "body": "FAQ 1 : Connect to Internet",
+      "link": "InternetConnection"
+    },
+    {
+      "userId": 1,
+      "id": 2,
+      "title": "Web Browsers vs Search Engines",
+      "body": "FAQ 2 : Search on Internet",
+      "link": "SearchEngines"
+    },
+    {
+      "userId": 1,
+      "id": 3,
+      "title": "Basic Internet Safety",
+      "link": "FacebookAccountCreation"
+    },
+    {
+      "userId": 1,
+      "id": 4,
+      "title": "How to Use Google Like A Pro",
+      "link": "FacebookAccountCreation"
+    }
+  
+  ]
