@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
 
   },
   text: {
-    fontSize:'20',
+    fontSize:20,
     color:'white',
     fontFamily: 'KohinoorDevanagari-Semibold',
     position:'absolute',

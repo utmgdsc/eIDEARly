@@ -1,0 +1,44 @@
+# How to Use Google: Beginner to (Slightly Advanced)
+
+## Learning Criteria
+
+In this tutorial we will cover:
+- the basics on how to use google
+- how to use different google tabs
+- some neat tricks to use google like a pro
+
+## Google Basics
+
+To use google on it's own is rather simple: here are the steps
+
+1. On every google page there is a bar at the top, that may or may not have words in it. You will know it's the bar we need if when you click/tap
+on it a blinking line shows up. Tap on that bar.
+
+2. Type in what you want to search
+
+3. Press ENTER if you are on a computer, or click on the search button. And voila! The results from your search will show up in order of what
+the website finds fits your search the best, and you can scroll down (whether by arrow keys or by mouse, or by the bar on the side) to look through
+the results.
+
+## Google Tabs: Images, Videos, and More
+
+Using Google on it's own is pretty good, but what if we wanted to be a little more specific with what we wanted to see? What if we only
+wanted to look for pictures or videos? Google can help with that as well!
+
+After searching for something, you should see a few tabs underneath the search bar. One of them is called Images and another Videos.
+
+If you click on either one, they will only show images or videos that are related to your search! You can also use the serch bar now, and search only
+for pictures/videos. If you want to go back, in the tabs underneath the search bar there should be an "All" option, that brings you back to seeing
+all related results.
+
+
+## Some Neat Tricks To Use Google Like a Pro:
+
+The following tricks aren't necessary to use Google, but they can be handy to use.
+
+When searching, if you want to make sure a specific phrase is included, put hyphens around like such: "Puppy Dog Sweaters".
+Rather than looking for pages that only contain one of the words, Google will look only for pages that contain the whole phrase.
+
+If you want to look for pages that don't have a certain term, use a hyphen before the word like such: Ford -car.
+Google will then ignore any results that have the word you put a hyphen before and not display them.
+## Further Resources
