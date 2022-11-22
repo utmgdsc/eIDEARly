@@ -9,7 +9,7 @@ const components = {
   h3: props => <View><Text style ={[styles.c, styles.weights.bold, styles.h3fontsize]} {...props} /></View>,
   h4: props => <View><Text style ={[styles.c, styles.weights.bold, styles.h4fontsize]} {...props} /></View>,
   h5: props => <View><Text style = {[styles.c, styles.para_align, styles.weights.bold, styles.h5fontsize]} {...props} /></View>,
-  p: props => <View><Text style = {[styles.c, ]} {...props} /></View>,
+  p: props => <View><Text style = {[styles.c, styles.weights.w500, styles.regularfontsize, styles.fontcollection.arial]} {...props} /></View>,
   strong: props => <View><Text style ={[styles.weights.bold, styles.c]} {...props}/></View>,
   br: props => <View><Text>{'\n'}</Text></View>,
   u: props => <View><Text style = {[styles.c, styles.underline]} {...props}></Text></View>,
@@ -68,21 +68,24 @@ const styles = StyleSheet.create({
     w900: {fontWeight: '900'}
   },
   h1fontsize: {
-    fontSize: 60,
+    fontSize: 34,
   },
   h2fontsize: {
-    fontSize: 52
+    fontSize: 28
   },
 
   h3fontsize: {
-    fontSize: 46
+    fontSize: 24
   },
   h4fontsize: {
-    fontSize: 38
+    fontSize: 20
   },
   h5fontsize: {
-    fontSize: 30
+    fontSize: 18
   },
+  regularfontsize: {
+    fontSize: 14
+  }
   fontcollection: {
     arial: {
       fontFamily: 'Arial'
