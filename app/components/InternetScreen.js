@@ -46,10 +46,10 @@ function InternetScreen({ navigation, setMaterial }) {
     }
     fetchdata();
 
-    const customData = require('./datainternet.json');
+    //const customData = require('./datainternet.json');
     // setFilteredDataSource(customData);
     //     setMasterDataSource(customData);
-        getMaterials();
+        //getMaterials();
   }, []);
   
  
@@ -70,35 +70,6 @@ function InternetScreen({ navigation, setMaterial }) {
       setSearch(text);
     }
   };
-
-  async function getDirectory(uri){
-    if (uri == null){
-      alert("Null input");
-      return;
-    }
-    const dir = await FileSystem.getInfoAsync(uri);
-    if (dir.exists){
-      const files = await FileSystem.readDirectoryAsync(uri);
-      alert(files.length);
-    }
-    else{
-      alert("Directory does not exist");
-    }
-  }
-
-  async function getMaterials(){
-    const uris = ["./Internet-LM/internet-lm/BasicInternetSafety.txt", 
-    "./Internet-LM/internet-lm/Connecting to The Internet.txt", 
-    "./Internet-LM/internet-lm/SearchEnginesAndWebBrowsers.txt",
-    "./Internet-LM/internet-lm/UsingGoogleLikeAPro"];
-
-    //const localUris = uris.map(uri => Asset.loadAsync(require(uri)));
-
-    const localUri = await Asset.loadAsync(require("./oldpeople.png"));
-
-    console.log(localUri);
-
-  }
  
 
   const ItemView = ({item}) => {
@@ -107,7 +78,7 @@ function InternetScreen({ navigation, setMaterial }) {
       <Text
         style={styles.button}
         onPress={() => {
-          setMaterial(getMaterialsText(item.id));
+          setMaterial(item.content);
           //setMaterial("# Hi \n How are you?")
           navigation.navigate('MD');
           }}>

@@ -1,0 +1,5 @@
+Search bar optimizations:
+- look in body as well
+- prioritze title, then matching words in body/keywords
+
+overwriting mdx components to stylize text
