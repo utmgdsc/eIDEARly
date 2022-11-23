@@ -3,7 +3,6 @@ import React, { useState, UseState, useEffect} from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, SafeAreaView, FlatList, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import SearchBar from "react-native-dynamic-search-bar";
-//import PhoneScreenWelcome from "./phoneScreenWelcome.mdx";
 
 
 function AppScreen({navigation, setMaterial}) {
