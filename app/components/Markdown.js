@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
 
   },
   c: {
-    color: "white"
+    color: "black"
   },
   logo: {
     height: 80,
