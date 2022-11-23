@@ -18,15 +18,40 @@ function InternetScreen({ navigation, setMaterial }) {
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   const [localMaterialUris, setlocalMaterialUris] = useState([]);
-  
+
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
+    async function fetchdata() {
+      let headersList = {
+        "Content-Type": "application/json",
+        "Access-Control-Request-Headers": "*",
+        "api-key": "EkwedxOG4B1jYHpBLrjYeGWM9nBxZPFFTMu1tDwazlhKbtNOfHMhxv64GnP6lXg4"
+       }
+       
+       let bodyContent = JSON.stringify({
+         "dataSource": "Cluster0",
+         "database": "eldearly",
+         "collection": "internet"
+       });
+       
+       let response = await fetch("https://data.mongodb-api.com/app/data-mrnjo/endpoint/data/v1/action/find", { 
+         method: "POST",
+         body: bodyContent,
+         headers: headersList
+       });
+       let data = await response.json();
+        setFilteredDataSource(data.documents);
+        setMasterDataSource(data.documents);
+    }
+    fetchdata();
 
     const customData = require('./datainternet.json');
-    setFilteredDataSource(customData);
-        setMasterDataSource(customData);
+    // setFilteredDataSource(customData);
+    //     setMasterDataSource(customData);
         getMaterials();
   }, []);
+  
  
   const searchFilterFunction = (text) => {
     if (text) {
@@ -118,7 +143,7 @@ function InternetScreen({ navigation, setMaterial }) {
   </Text>
 
 <Text style={{fontWeight: "bold", fontSize: 20, color:'white', padding:10}}>
-Frequently Asked Questions
+Frequently asked questions
 </Text>
         <SearchBar
         fontColor="#c6c6c6"
