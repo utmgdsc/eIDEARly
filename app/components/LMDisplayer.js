@@ -2,7 +2,6 @@ import React, { useState, UseState, useEffect} from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, SafeAreaView, FlatList, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import Markdown from './Markdown';
-import * as FileSystem from 'expo-file-system';
 import { ScrollView } from 'react-native';
 
 

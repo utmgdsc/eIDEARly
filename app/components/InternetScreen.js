@@ -3,11 +3,6 @@ import React, { useState, UseState, useEffect} from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, SafeAreaView, FlatList, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import SearchBar from "react-native-dynamic-search-bar";
-import Markdown from './Markdown';
-import * as FileSystem from "expo-file-system";
-import { Asset } from 'expo-asset';
-import MaterialDisplay from './Internet-LM/LMDisplayer';
-import { getMaterialsText } from './Internet-LM/getMaterialsText';
 
 
 
@@ -102,8 +97,6 @@ function InternetScreen({ navigation, setMaterial }) {
     colors={['#8FA5A8', '#8FA5A8', '#E6B1B1']}
       style={styles.container}
     >
-
-    <Markdown mdx = {FileSystem.documentDirectory}/>
 
     
 
