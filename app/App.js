@@ -18,7 +18,7 @@ export default function App() {
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Phone" component={(props) => <PhoneScreen setMaterial={setMaterial} {...props}/>} />
         <Stack.Screen name="Internet" component={(props) => <InternetScreen setMaterial={setMaterial} {...props}/>}/>
-        <Stack.Screen name="Apps" component={AppScreen}/>
+        <Stack.Screen name="Apps" component={(props) => <AppScreen setMaterial={setMaterial} {...props}/>}/>
         <Stack.Screen name="MD" component={(props)=> <MaterialDisplay material={material} {...props}/>}/>
 
       </Stack.Navigator>
