@@ -41,10 +41,6 @@ function InternetScreen({ navigation, setMaterial }) {
     }
     fetchdata();
 
-    //const customData = require('./datainternet.json');
-    // setFilteredDataSource(customData);
-    //     setMasterDataSource(customData);
-        //getMaterials();
   }, []);
   
  
