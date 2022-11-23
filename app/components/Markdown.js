@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   },
   regularfontsize: {
     fontSize: 14
-  }
+  },
   fontcollection: {
     arial: {
       fontFamily: 'Arial'
