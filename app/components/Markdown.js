@@ -1,15 +1,16 @@
 import { StyleSheet, Text, View, Linking, TouchableOpacity, Image} from 'react-native';
 import {StatusBar} from "expo-status-bar";
 import MDX from "@mdx-js/runtime";
+import { shadow } from 'react-native-paper';
 // Provide custom components for markdown elements
 const components = {
 
-  h1: props => <View><Text style={[styles.c, styles.weights.w900, styles.h1fontsize, styles.fontcollection.TNR]} {...props} /></View>,
-  h2: props => <View><Text style ={[styles.c, styles.weights.bold, styles.h2fontsize]} {...props} /></View>,
+  h1: props => <View><Text style={[styles.textbox, styles.weights.w900, styles.h1fontsize, styles.fontcollection.TNR]} {...props} /></View>,
+  h2: props => <View><Text style ={[styles.textbox1, styles.weights.bold]} {...props} /></View>,
   h3: props => <View><Text style ={[styles.c, styles.weights.bold, styles.h3fontsize]} {...props} /></View>,
   h4: props => <View><Text style ={[styles.c, styles.weights.bold, styles.h4fontsize]} {...props} /></View>,
   h5: props => <View><Text style = {[styles.c, styles.para_align, styles.weights.bold, styles.h5fontsize]} {...props} /></View>,
-  p: props => <View><Text style = {[styles.c, styles.weights.w500, styles.regularfontsize, styles.fontcollection.arial]} {...props} /></View>,
+  p: props => <View><Text style = {[styles.textbox2, styles.weights.w500, styles.regularfontsize, styles.fontcollection.arial]} {...props} /></View>,
   strong: props => <View><Text style ={[styles.weights.bold, styles.c]} {...props}/></View>,
   br: props => <View><Text>{'\n'}</Text></View>,
   u: props => <View><Text style = {[styles.c, styles.underline]} {...props}></Text></View>,
@@ -35,12 +36,58 @@ export default function Markdown({mdx}) {
 
 
 const styles = StyleSheet.create({
+
+  textbox:{
+    backgroundColor:'#F15A66',
+    borderWidth:3,
+    borderColor:'white'
+,   borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    marginBottom: 20,
+    margin:20,
+    color:'white'
+  },
+
+  textbox1:{
+    backgroundColor:'#F98089',
+    borderWidth:1,
+    borderColor:'white'
+,   borderRadius: 10,
+    paddingVertical: 5,
+    paddingHorizontal: 5,
+    marginBottom: 10,
+    margin:10,
+    color:'white',
+    fontSize:18,
+    textAlign:"center"
+  },
+
+  textbox2:{
+    backgroundColor:'white',
+    borderWidth:0,
+    borderColor:'#FF9F9F'
+,   borderRadius: 10,
+    paddingVertical: 5,
+    paddingHorizontal: 5,
+    marginBottom: 10,
+    margin:10,
+    color:'#237A83',
+    fontSize:18,
+    textAlign:"center",
+    shadowColor: '#171717',
+    shadowOffset: {width: -2, height: 4},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+  },
+
   para_align: {
     textAlign: "center"
 
   },
   c: {
     color: "black"
+
   },
   logo: {
     height: 80,
@@ -88,10 +135,10 @@ const styles = StyleSheet.create({
   },
   fontcollection: {
     arial: {
-      fontFamily: 'Arial'
+      fontFamily: 'Helvetica-Bold'
     },
     TNR: {
-      fontFamily: 'Times New Roman'
+      fontFamily: 'KohinoorDevanagari-Semibold'
     }
 
   }

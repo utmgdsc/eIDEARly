@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   
     },
     text: {
-      fontSize:20,
+      fontSize:30,
       color:'white',
       fontFamily: 'KohinoorDevanagari-Semibold',
       position:'absolute',
