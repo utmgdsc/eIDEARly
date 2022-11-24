@@ -19,8 +19,18 @@ const components = {
   i: props => <View><Text style = {[styles.c, styles.italic]} {...props} /></View>,
   sub: props => <View><Text style =  {{lineHeight: 18}}  {...props}/></View>,
   sup: props => <View><Text style = {{lineHeight: 30}} {...props}/></View>,
-  //a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL(props.href)}> {props.title} {props.children}</Text></TouchableOpacity></View>
-  // img prop can accept any string, have to implement RegEx here in order to only accept valid image input
+  //a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL(props.href)}> {props.title} {props.children}</Text></TouchableOpacity></View>,
+  //option: props => <QuizMaker entirequiz={props.children}/>
+}
+
+function QuizMaker({entirequiz}) {
+  var arr = entirequiz.split(',');
+
+  return arr.map((data) => {
+    return (
+      <View><TouchableOpacity style = {styles.option_style}><Text style = {styles.c}>{data}</Text></TouchableOpacity></View>
+    )
+  })
 }
 // Provide variables that might be referenced by JSX
 const scope = {
