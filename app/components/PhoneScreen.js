@@ -6,7 +6,7 @@ import SearchBar from "react-native-dynamic-search-bar";
 //import PhoneScreenWelcome from "./phoneScreenWelcome.mdx";
 
 
-function PhoneScreen() {
+function PhoneScreen({ navigation, setMaterial }) {
 
   const [Search, setSearch] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
@@ -14,18 +14,37 @@ function PhoneScreen() {
 
 
   useEffect(() => {
-
-    const customData = require('./dataphone.json');
-    setFilteredDataSource(customData);
-        setMasterDataSource(customData);
+    async function fetchdata() {
+      let headersList = {
+        "Content-Type": "application/json",
+        "Access-Control-Request-Headers": "*",
+        "api-key": "EkwedxOG4B1jYHpBLrjYeGWM9nBxZPFFTMu1tDwazlhKbtNOfHMhxv64GnP6lXg4"
+       }
+       
+       let bodyContent = JSON.stringify({
+         "dataSource": "Cluster0",
+         "database": "eldearly",
+         "collection": "phone"
+       });
+       
+       let response = await fetch("https://data.mongodb-api.com/app/data-mrnjo/endpoint/data/v1/action/find", { 
+         method: "POST",
+         body: bodyContent,
+         headers: headersList
+       });
+       let data = await response.json();
+        setFilteredDataSource(data.documents);
+        setMasterDataSource(data.documents);
+    }
+    fetchdata();
   }, []);
  
   const searchFilterFunction = (text) => {
     if (text) {
   
       const newData = masterDataSource.filter(function (item) {
-        const itemData = item.body
-          ? item.body.toUpperCase().trim()
+        const itemData = item.title
+          ? item.title.toUpperCase().trim()
           : ''.toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
@@ -44,8 +63,13 @@ function PhoneScreen() {
       // Flat List Item
       <Text
         style={styles.button}
-        onPress={() => getItem(item)}>
-          {item.body.toUpperCase()}
+        onPress={() => {
+          setMaterial(item.content);
+          navigation.navigate('MD');
+          }}>
+        
+        
+          {item.title.toUpperCase()}
       </Text>
     );
   };
