@@ -1,9 +1,8 @@
 import React from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import logo from './logo.png';
-import people from './oldpeople.png';
-import Markdown from "./Markdown";
+import logo from '../assets/logo.png';
+import people from '../assets/oldpeople.png';
 
 TouchableOpacity.defaultProps = { activeOpacity: 0.5 };
 

@@ -14,8 +14,6 @@ function InternetScreen({ navigation, setMaterial }) {
 
   const [localMaterialUris, setlocalMaterialUris] = useState([]);
 
-  const [title, setTitle] = useState("");
-
   useEffect(() => {
     async function fetchdata() {
       let headersList = {
@@ -102,7 +100,7 @@ function InternetScreen({ navigation, setMaterial }) {
   </Text>
 
 <Text style={{fontWeight: "bold", fontSize: 20, color:'white', padding:10}}>
-Frequently asked questions
+Frequently Asked Questions
 </Text>
         <SearchBar
         fontColor="#c6c6c6"
