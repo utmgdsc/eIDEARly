@@ -46,8 +46,10 @@ function PhoneScreen({ navigation, setMaterial }) {
         const itemData = item.title
           ? item.title.toUpperCase().trim()
           : ''.toUpperCase();
+        const bodyData = item.content ? item.content.toUpperCase().trim()
+        : ''.toUpperCase();;
         const textData = text.toUpperCase();
-        return itemData.indexOf(textData) > -1;
+        return (itemData.indexOf(textData) > -1 || bodyData.indexOf(textData) > -1);
       });
       setFilteredDataSource(newData);
       setSearch(text);
