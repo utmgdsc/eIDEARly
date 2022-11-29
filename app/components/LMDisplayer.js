@@ -1,8 +1,7 @@
 import React, { useState, UseState, useEffect} from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, SafeAreaView, FlatList, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import Markdown from '../Markdown';
-import * as FileSystem from 'expo-file-system';
+import Markdown from './Markdown';
 import { ScrollView } from 'react-native';
 
 
@@ -36,7 +35,7 @@ const styles = StyleSheet.create({
   
     },
     text: {
-      fontSize:20,
+      fontSize:30,
       color:'white',
       fontFamily: 'KohinoorDevanagari-Semibold',
       position:'absolute',

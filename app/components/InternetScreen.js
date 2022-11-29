@@ -3,11 +3,6 @@ import React, { useState, UseState, useEffect} from 'react';
 import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, SafeAreaView, FlatList, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import SearchBar from "react-native-dynamic-search-bar";
-import Markdown from './Markdown';
-import * as FileSystem from "expo-file-system";
-import { Asset } from 'expo-asset';
-import MaterialDisplay from './Internet-LM/LMDisplayer';
-import { getMaterialsText } from './Internet-LM/getMaterialsText';
 
 
 
@@ -18,15 +13,33 @@ function InternetScreen({ navigation, setMaterial }) {
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   const [localMaterialUris, setlocalMaterialUris] = useState([]);
-  
 
   useEffect(() => {
-
-    const customData = require('./datainternet.json');
-    setFilteredDataSource(customData);
-        setMasterDataSource(customData);
-        getMaterials();
+    async function fetchdata() {
+      let headersList = {
+        "Content-Type": "application/json",
+        "Access-Control-Request-Headers": "*",
+        "api-key": "EkwedxOG4B1jYHpBLrjYeGWM9nBxZPFFTMu1tDwazlhKbtNOfHMhxv64GnP6lXg4"
+       }
+       
+       let bodyContent = JSON.stringify({
+         "dataSource": "Cluster0",
+         "database": "eldearly",
+         "collection": "internet"
+       });
+       
+       let response = await fetch("https://data.mongodb-api.com/app/data-mrnjo/endpoint/data/v1/action/find", { 
+         method: "POST",
+         body: bodyContent,
+         headers: headersList
+       });
+       let data = await response.json();
+        setFilteredDataSource(data.documents);
+        setMasterDataSource(data.documents);
+    }
+    fetchdata();
   }, []);
+  
  
   const searchFilterFunction = (text) => {
     if (text) {
@@ -45,35 +58,6 @@ function InternetScreen({ navigation, setMaterial }) {
       setSearch(text);
     }
   };
-
-  async function getDirectory(uri){
-    if (uri == null){
-      alert("Null input");
-      return;
-    }
-    const dir = await FileSystem.getInfoAsync(uri);
-    if (dir.exists){
-      const files = await FileSystem.readDirectoryAsync(uri);
-      alert(files.length);
-    }
-    else{
-      alert("Directory does not exist");
-    }
-  }
-
-  async function getMaterials(){
-    const uris = ["./Internet-LM/internet-lm/BasicInternetSafety.txt", 
-    "./Internet-LM/internet-lm/Connecting to The Internet.txt", 
-    "./Internet-LM/internet-lm/SearchEnginesAndWebBrowsers.txt",
-    "./Internet-LM/internet-lm/UsingGoogleLikeAPro"];
-
-    //const localUris = uris.map(uri => Asset.loadAsync(require(uri)));
-
-    const localUri = await Asset.loadAsync(require("./oldpeople.png"));
-
-    console.log(localUri);
-
-  }
  
 
   const ItemView = ({item}) => {
@@ -82,7 +66,7 @@ function InternetScreen({ navigation, setMaterial }) {
       <Text
         style={styles.button}
         onPress={() => {
-          setMaterial(getMaterialsText(item.id));
+          setMaterial(item.content);
           //setMaterial("# Hi \n How are you?")
           navigation.navigate('MD');
           }}>
@@ -106,8 +90,6 @@ function InternetScreen({ navigation, setMaterial }) {
     colors={['#8FA5A8', '#8FA5A8', '#E6B1B1']}
       style={styles.container}
     >
-
-    <Markdown mdx = {FileSystem.documentDirectory}/>
 
     
 
