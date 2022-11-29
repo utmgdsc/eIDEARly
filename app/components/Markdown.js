@@ -19,17 +19,37 @@ const components = {
   i: props => <View><Text style = {[styles.c, styles.italic]} {...props} /></View>,
   sub: props => <View><Text style =  {{lineHeight: 18}}  {...props}/></View>,
   sup: props => <View><Text style = {{lineHeight: 30}} {...props}/></View>,
-  //a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL(props.href)}> {props.title} {props.children}</Text></TouchableOpacity></View>,
-  //option: props => <QuizMaker entirequiz={props.children}/>
+  option: props => <QuizMaker entirequiz={props.children}/>,
+  image: props => <View><Image style={styles.pic} source={{uri: props.children}}/></View>
 }
 
+
 function QuizMaker({entirequiz}) {
+
+  const [on, setOn] = useState(false);
+
+  function f(){
+    setOn(true);
+  }
   var arr = entirequiz.split(',');
 
+
   return arr.map((data) => {
-    return (
-      <View><TouchableOpacity style = {styles.option_style}><Text style = {styles.c}>{data}</Text></TouchableOpacity></View>
-    )
+    if (JSON.stringify(data).indexOf('[Y]') == -1){
+      return (
+      
+        <View><TouchableOpacity style = {styles.option_style}><Text style = {styles.c}>{data}</Text></TouchableOpacity></View>
+      )
+      }
+      // should turn red on press
+    else{
+      var x = JSON.stringify(data).lastIndexOf("[Y]")
+      data = JSON.stringify(data).substring(1,x)
+      return (
+        <View><TouchableOpacity onPress={() => {f}} style = {[styles.option, on? styles.bg_red : styles.bg_green]}><Text style = {styles.c}>{data}</Text></TouchableOpacity></View>
+      )
+    }
+    // should turn green on press.
   })
 }
 // Provide variables that might be referenced by JSX
