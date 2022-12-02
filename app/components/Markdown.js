@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Linking, TouchableOpacity, Image} from 'react-native';
 import {StatusBar} from "expo-status-bar";
 import MDX from "@mdx-js/runtime";
-import { shadow } from 'react-native-paper';
+import { useState } from 'react';
 // Provide custom components for markdown elements
 const components = {
 
@@ -19,9 +19,47 @@ const components = {
   i: props => <View><Text style = {[styles.c, styles.italic]} {...props} /></View>,
   sub: props => <View><Text style =  {{lineHeight: 18}}  {...props}/></View>,
   sup: props => <View><Text style = {{lineHeight: 30}} {...props}/></View>,
-  //a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL(props.href)}> {props.title} {props.children}</Text></TouchableOpacity></View>
-  // img prop can accept any string, have to implement RegEx here in order to only accept valid image input
+  option: props => <QuizMaker entirequiz={props.children}/>,
+  image: props => <View><Image style={styles.pic} source={{uri: props.children}}/></View>
 }
+
+
+function QuizMaker({entirequiz}) {
+
+  const [on, setOn] = useState(false);
+
+  function f(){
+    setOn(true);
+  }
+  var arr = entirequiz.split(',');
+
+  return arr.map((data) => {
+    // console.log(data);
+    if (JSON.stringify(data).indexOf('[Y]') == -1){
+      return (
+        <View>
+          <TouchableOpacity>
+            <Text style = {styles.c}>{data}</Text>
+          </TouchableOpacity>
+        </View>
+      )
+      }
+      // should turn red on press
+    else{
+      var x = JSON.stringify(data).lastIndexOf("[Y]")
+      data = JSON.stringify(data).substring(1,x)
+      return (
+        <View>
+          <TouchableOpacity onPress={() => setOn(true)} style = {{backgroundColor: !on ? 'white' : 'green'}}>
+            <Text style = {styles.c}>{data}</Text>
+          </TouchableOpacity>
+        </View>
+      )
+    }
+    // should turn green on press.
+  })
+}
+
 // Provide variables that might be referenced by JSX
 const scope = {
     some: 'value'
@@ -36,7 +74,6 @@ export default function Markdown({mdx}) {
 
 
 const styles = StyleSheet.create({
-
   textbox:{
     backgroundColor:'#F15A66',
     borderWidth:3,
