@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Linking, TouchableOpacity, Image} from 'react-native';
 import {StatusBar} from "expo-status-bar";
 import MDX from "@mdx-js/runtime";
-import { shadow } from 'react-native-paper';
+import { useState } from 'react';
 // Provide custom components for markdown elements
 const components = {
 
@@ -33,12 +33,15 @@ function QuizMaker({entirequiz}) {
   }
   var arr = entirequiz.split(',');
 
-
   return arr.map((data) => {
+    // console.log(data);
     if (JSON.stringify(data).indexOf('[Y]') == -1){
       return (
-      
-        <View><TouchableOpacity style = {styles.option_style}><Text style = {styles.c}>{data}</Text></TouchableOpacity></View>
+        <View>
+          <TouchableOpacity>
+            <Text style = {styles.c}>{data}</Text>
+          </TouchableOpacity>
+        </View>
       )
       }
       // should turn red on press
@@ -46,7 +49,11 @@ function QuizMaker({entirequiz}) {
       var x = JSON.stringify(data).lastIndexOf("[Y]")
       data = JSON.stringify(data).substring(1,x)
       return (
-        <View><TouchableOpacity onPress={() => {f}} style = {[styles.option, on? styles.bg_red : styles.bg_green]}><Text style = {styles.c}>{data}</Text></TouchableOpacity></View>
+        <View>
+          <TouchableOpacity onPress={() => setOn(true)} style = {{backgroundColor: !on ? 'white' : 'green'}}>
+            <Text style = {styles.c}>{data}</Text>
+          </TouchableOpacity>
+        </View>
       )
     }
     // should turn green on press.
@@ -67,7 +74,6 @@ export default function Markdown({mdx}) {
 
 
 const styles = StyleSheet.create({
-
   textbox:{
     backgroundColor:'#F15A66',
     borderWidth:3,
