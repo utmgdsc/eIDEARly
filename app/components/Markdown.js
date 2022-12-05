@@ -3,6 +3,7 @@ import {StatusBar} from "expo-status-bar";
 import MDX from "@mdx-js/runtime";
 import { shadow } from 'react-native-paper';
 // Provide custom components for markdown elements
+import Slideshow from 'react-native-image-slider-show';
 const components = {
 
   h1: props => <View><Text style={[styles.textbox, styles.weights.w900, styles.h1fontsize, styles.fontcollection.TNR]} {...props} /></View>,
@@ -11,7 +12,7 @@ const components = {
   h4: props => <View><Text style ={[styles.c, styles.weights.bold, styles.h4fontsize]} {...props} /></View>,
   h5: props => <View><Text style = {[styles.c, styles.para_align, styles.weights.bold, styles.h5fontsize]} {...props} /></View>,
   p: props => <View><Text style = {[styles.textbox2, styles.weights.w500, styles.regularfontsize, styles.fontcollection.arial]} {...props} /></View>,
-  strong: props => <View><Text style ={[styles.weights.bold, styles.c]} {...props}/></View>,
+  strong: props => <View><Text style ={[styles.fontColor, styles.weights.bold, styles.h5fontsize]} {...props}/></View>,
   br: props => <View><Text>{'\n'}</Text></View>,
   u: props => <View><Text style = {[styles.c, styles.underline]} {...props}></Text></View>,
   blockquote: props => <View><Text><blockquote style = {styles.c} {...props} /></Text></View>,
@@ -19,6 +20,7 @@ const components = {
   i: props => <View><Text style = {[styles.c, styles.italic]} {...props} /></View>,
   sub: props => <View><Text style =  {{lineHeight: 18}}  {...props}/></View>,
   sup: props => <View><Text style = {{lineHeight: 30}} {...props}/></View>,
+  image: props => <View><Image style={styles.pic} source={{uri: props.children}}/></View>
   //a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL(props.href)}> {props.title} {props.children}</Text></TouchableOpacity></View>
   // img prop can accept any string, have to implement RegEx here in order to only accept valid image input
 }
@@ -28,7 +30,7 @@ const scope = {
 }
 export default function Markdown({mdx}) {
   return (
-    <View>
+    <View style={{backgroundColor:'#61A6AB'}}>
       <MDX components={components} scope={scope}>{mdx}</MDX>
     </View>
   );
@@ -37,9 +39,14 @@ export default function Markdown({mdx}) {
 
 const styles = StyleSheet.create({
 
+  fontColor:{
+    color:'#237A83',
+    textAlign:"center",
+  },
+
   textbox:{
-    backgroundColor:'#F15A66',
-    borderWidth:3,
+    backgroundColor:'#FF5757',
+    borderWidth:4,
     borderColor:'white'
 ,   borderRadius: 10,
     paddingVertical: 10,
@@ -50,7 +57,7 @@ const styles = StyleSheet.create({
   },
 
   textbox1:{
-    backgroundColor:'#F98089',
+    backgroundColor:'#FF5757',
     borderWidth:1,
     borderColor:'white'
 ,   borderRadius: 10,
@@ -132,6 +139,11 @@ const styles = StyleSheet.create({
   },
   regularfontsize: {
     fontSize: 14
+  },
+  pic:{
+    width: 370,
+    height: 400,
+    resizeMode: 'contain'
   },
   fontcollection: {
     arial: {

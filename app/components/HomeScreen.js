@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, TouchableOpacity} from 'react-native';
+import { Image, StyleSheet, Text, View, TouchableOpacity, ImageBackground} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import logo from '../assets/logo.png';
 import people from '../assets/oldpeople.png';
@@ -8,22 +8,27 @@ TouchableOpacity.defaultProps = { activeOpacity: 0.5 };
 
 function HomeScreen({ navigation }) {
   return (
-    <LinearGradient
-      colors={['#FAEBEC', '#E6B1B1', '#FF5454']}
-      style={styles.container}
-    >
+    // <LinearGradient
+    //   colors={['#FAEBEC', '#E6B1B1', '#FF5454']}
+    //   style={styles.container}
+    // >
+     
     <View style={styles.container}>
-      <Image source={logo} style={styles.logo}></Image>
+      <ImageBackground
+     style={styles.backgroundImage}
+     source={require('../assets/8_1.png')}> 
+      {/* <Image source={logo} style={styles.logo}></Image> */}
       <Text style={styles.text}>Press to select</Text> 
       <View style={styles.boxbutton}>
             <AppButton title="Phone" onPress={() => navigation.navigate('Phone')}/>
             <AppButton title="Internet" onPress={() => navigation.navigate('Internet')}/>
             <AppButton title="Apps" onPress={() => navigation.navigate('Apps')}/>
       </View> 
+      </ImageBackground>
     </View>  
-    <Image source={people} style={styles.people}></Image>   
+    // <Image source={people} style={styles.people}></Image>   
 
-  </LinearGradient>
+  // </LinearGradient>
   );
 }
 
@@ -53,33 +58,38 @@ const styles = StyleSheet.create({
     color:'white',
     fontFamily: 'KohinoorDevanagari-Semibold',
     position:'absolute',
-    top:250
+    top:250,
+    marginLeft: 120
   },
   button:{
-    backgroundColor:'#FF5454',
+    backgroundColor:'#F6F3E4',
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 35,
     marginBottom: 20,
   },
   buttontext:{
-    color:'white', 
+    color:'black', 
     textAlign:'center',
-    fontFamily: 'KohinoorDevanagari-Semibold'
+    fontFamily: 'KohinoorDevanagari-Semibold',
+    fontWeight:'bold',
+    fontSize:22
   },
 
   boxbutton:{
-    marginTop:100,
-    width:'85%',
+    marginTop:300,
+    marginLeft:65,
+    width:'65%',
     borderRadius: 20,
-    padding:34,
-    backgroundColor:'#FFF4F4',
-    opacity:0.7,
+    padding:20,
+    backgroundColor:'#E23B53',
     shadowColor: '#171717',
     shadowOffset: {width: -2, height: 4},
     shadowOpacity: 0.2,
     shadowRadius: 15,
-    zIndex:1
+    zIndex:1,
+    borderWidth:1,
+    borderColor:'white'
 
   },
   people:{
@@ -88,7 +98,12 @@ const styles = StyleSheet.create({
     position:'absolute', 
     bottom:-40, 
     left:100,
-  }
+  },
+  backgroundImage: {
+    resizeMode: 'cover', // or 'stretch'
+    width:'100%',
+    height:'100%'
+  },
 });
 
 export default HomeScreen;
