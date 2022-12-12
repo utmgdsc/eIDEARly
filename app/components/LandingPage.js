@@ -58,27 +58,40 @@ const styles = StyleSheet.create({
   button:{
     alignItems: 'center',
     justifyContent: 'center',
-    paddingVertical: 5,
+    paddingVertical: 10,
     paddingHorizontal: 5,
     borderRadius: 4,
     elevation: 3,
     backgroundColor: 'white',
+    fontWeight:'bold',
+    shadowColor: '#171717',
+    shadowOffset: {width: -2, height: 4},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    borderWidth: 1,
+    borderColor: "red",
   },
   buttontext:{
     color:'black', 
     textAlign:'center',
     fontFamily: 'KohinoorDevanagari-Semibold',
-    fontSize: 15,
-    lineHeight: 21,
+    fontSize: 16,
+    lineHeight: 31,
     fontWeight: 'bold',
     letterSpacing: 0.25,
   },
-
+  
   boxbutton:{
-    marginTop:'178%',
+    marginTop:'174%',
     marginHorizontal:'28%',
     width:'45%',
     borderRadius: 20,
+    shadowColor: '#171717',
+    shadowOffset: {width: -2, height: 4},
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+  
+  
   },
 //   people:{
 //     width: 275, 

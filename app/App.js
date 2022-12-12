@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Button, View, Text } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, NavigationAction } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './components/HomeScreen';
 import PhoneScreen from './components/PhoneScreen';
@@ -10,6 +10,9 @@ import MaterialDisplay from './components/LMDisplayer';
 import LandingPage from './components/LandingPage'
 import Feedback from './components/Feedback';
 import Slideshow from './components/Slideshow';
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
 
 const Stack = createNativeStackNavigator();
 

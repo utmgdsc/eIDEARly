@@ -1,9 +1,7 @@
 import { StyleSheet, Text, View, Linking, TouchableOpacity, Image} from 'react-native';
 import {StatusBar} from "expo-status-bar";
 import MDX from "@mdx-js/runtime";
-import { shadow } from 'react-native-paper';
-// Provide custom components for markdown elements
-import Slideshow from 'react-native-image-slider-show';
+import { useState } from 'react';
 const components = {
 
   h1: props => <View><Text style={[styles.textbox, styles.weights.w900, styles.h1fontsize, styles.fontcollection.TNR]} {...props} /></View>,
@@ -20,11 +18,47 @@ const components = {
   i: props => <View><Text style = {[styles.c, styles.italic]} {...props} /></View>,
   sub: props => <View><Text style =  {{lineHeight: 18}}  {...props}/></View>,
   sup: props => <View><Text style = {{lineHeight: 30}} {...props}/></View>,
-  image: props => <View><Image style={styles.pic} source={{uri: props.children}}/></View>
+  image: props => <View><Image style={styles.pic} source={{uri: props.children}}/></View>,
+  option: props => <View><QuizMaker entirequiz={props.children}/></View>
   //a: props => <View><TouchableOpacity><Text style = {{color: 'blue'}} onPress= {() => Linking.openURL(props.href)}> {props.title} {props.children}</Text></TouchableOpacity></View>
   // img prop can accept any string, have to implement RegEx here in order to only accept valid image input
 }
 // Provide variables that might be referenced by JSX
+function QuizMaker({entirequiz}) {
+
+  const [on, setOn] = useState(false);
+
+  function f(){
+    setOn(true);
+  }
+  var arr = entirequiz.split(',');
+
+  return arr.map((data) => {
+    // console.log(data);
+    if (JSON.stringify(data).indexOf('[Y]') == -1){
+      return (
+        <View>
+          <TouchableOpacity style={{marginLeft:50, marginTop:20}}>
+            <Text style = {styles.c}>{data}</Text>
+          </TouchableOpacity>
+        </View>
+      )
+      }
+      // should turn red on press
+    else{
+      var x = JSON.stringify(data).lastIndexOf("[Y]")
+      data = JSON.stringify(data).substring(1,x)
+      return (
+        <View style={{marginLeft:50,marginTop:20}}>
+          <TouchableOpacity onPress={() => setOn(true)} style = {{backgroundColor: !on ? '#F7B9A1' : '#77D650'}}>
+            <Text style = {styles.c1}>{data}</Text>
+          </TouchableOpacity>
+        </View>
+      )
+    }
+    // should turn green on press.
+  })
+}
 const scope = {
     some: 'value'
 }
@@ -42,6 +76,7 @@ const styles = StyleSheet.create({
   fontColor:{
     color:'#237A83',
     textAlign:"center",
+    
   },
 
   textbox:{
@@ -93,7 +128,23 @@ const styles = StyleSheet.create({
 
   },
   c: {
-    color: "black"
+    backgroundColor:'#F7B9A1',
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    marginBottom: 6,
+    color:'black',
+    fontSize:18,
+    fontWeight:'bold'
+
+  },
+  c1: {
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 30,
+    color:'black',
+    fontSize:18,
+    fontWeight:'bold'
 
   },
   logo: {
@@ -125,7 +176,7 @@ const styles = StyleSheet.create({
     fontSize: 34,
   },
   h2fontsize: {
-    fontSize: 28
+    fontSize: 2
   },
 
   h3fontsize: {
@@ -138,7 +189,7 @@ const styles = StyleSheet.create({
     fontSize: 18
   },
   regularfontsize: {
-    fontSize: 14
+    fontSize: 17
   },
   pic:{
     width: 370,
@@ -153,6 +204,7 @@ const styles = StyleSheet.create({
       fontFamily: 'KohinoorDevanagari-Semibold'
     }
 
-  }
+  },
+ 
 
 });
