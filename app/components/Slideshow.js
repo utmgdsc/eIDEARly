@@ -28,9 +28,9 @@ function Imageslider({navigation}) {
          indicatorSize={20}
          indicatorSelectedColor={'red'}
       dataSource={[
-        {url:require('C:/Users/DELL/Desktop/Dev/eIDEARly/app/assets/3.png') },
-        { url:require('C:/Users/DELL/Desktop/Dev/eIDEARly/app/assets/4.png') },
-        { url:require('C:/Users/DELL/Desktop/Dev/eIDEARly/app/assets/5.png') },
+        {url:require('../assets/3.png') },
+        { url:require('../assets/4.png') },
+        { url:require('../assets/5.png') },
     ]}/>
     </ImageBackground>
      
