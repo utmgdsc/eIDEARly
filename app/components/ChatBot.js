@@ -7,7 +7,6 @@ export default function Home() {
   const [result, setResult] = useState("result");
   
   async function onSubmitE() {
-    console.log(questionInput);
     let headersList = {
       "Accept": "*/*",
       "Content-Type": "application/json",
@@ -27,7 +26,6 @@ export default function Home() {
     });
 
     let data = await response.json();
-    console.log(data);
     setResult(data.choices[0].text);
   }
 
@@ -47,22 +45,5 @@ export default function Home() {
 <Text>{result}</Text>
 
 </SafeAreaView>
-
-    // <div>
-    //   <main className={styles.main}>
-    //     <h3>Ask me</h3>
-    //     <form onSubmit={onSubmit}>
-    //       <input
-    //         type="text"
-    //         name="question"
-    //         placeholder="Question here"
-    //         value={questionInput}
-    //         onChange={(e) => setquestionInput(e.target.value)}
-    //       />
-    //       <input type="submit" value="Get answer" />
-    //     </form>
-    //     <div className={styles.result}>{result}</div>
-    //   </main>
-    // </div>
   );
 }
