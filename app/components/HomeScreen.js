@@ -23,6 +23,7 @@ function HomeScreen({ navigation }) {
             <AppButton title="Phone" onPress={() => navigation.navigate('Phone')}/>
             <AppButton title="Internet" onPress={() => navigation.navigate('Internet')}/>
             <AppButton title="Apps" onPress={() => navigation.navigate('Apps')}/>
+            <AppButton title="Ask us anything!" onPress={() => navigation.navigate('chatbot')}/>
       </View> 
       </ImageBackground>
     </View>  
