@@ -7,6 +7,7 @@ import PhoneScreen from './components/PhoneScreen';
 import InternetScreen from './components/InternetScreen';
 import AppScreen from './components/AppScreen';
 import MaterialDisplay from './components/LMDisplayer';
+import Home from './components/ChatBot';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +16,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Phone" component={(props) => <PhoneScreen setMaterial={setMaterial} {...props}/>} />
         <Stack.Screen name="Internet" component={(props) => <InternetScreen setMaterial={setMaterial} {...props}/>}/>
         <Stack.Screen name="Apps" component={(props) => <AppScreen setMaterial={setMaterial} {...props}/>}/>
