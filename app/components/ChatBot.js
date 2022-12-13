@@ -7,16 +7,17 @@ export default function Home() {
   const [result, setResult] = useState("result");
   
   async function onSubmitE() {
-    console.log(questionInput)
+    console.log(questionInput);
     let headersList = {
       "Accept": "*/*",
       "Content-Type": "application/json",
-      "Authorization": "Bearer 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"
+      "Authorization": "Bearer " + process.env.TOKEN
      }
      
      let bodyContent = JSON.stringify({
        "model": "text-davinci-003",
        "prompt": questionInput,
+       "temperature": 0
      });
 
      let response = await fetch("https://api.openai.com/v1/completions", { 
@@ -26,6 +27,7 @@ export default function Home() {
     });
 
     let data = await response.json();
+    console.log(data);
     setResult(data.choices[0].text);
   }
 
