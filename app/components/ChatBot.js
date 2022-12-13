@@ -5,12 +5,7 @@ import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, Saf
 export default function Home() {
   const [questionInput, setquestionInput] = useState("");
   const [result, setResult] = useState("result");
-
-  const configuration = new Configuration({
-    apiKey: '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',
-  });
-  const openai = new OpenAIApi(configuration);
-
+  
   async function onSubmitE() {
     console.log(questionInput)
     let headersList = {
