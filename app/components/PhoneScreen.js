@@ -1,6 +1,6 @@
 
 import React, { useState, UseState, useEffect} from 'react';
-import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, SafeAreaView, FlatList, Alert} from 'react-native';
+import { Image, StyleSheet, Text, View, TouchableOpacity, ImageBackground, Button, Pressable, SafeAreaView, FlatList, Alert} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import SearchBar from "react-native-dynamic-search-bar";
 //import PhoneScreenWelcome from "./phoneScreenWelcome.mdx";
@@ -85,18 +85,26 @@ function PhoneScreen({ navigation, setMaterial }) {
 
 
   return (
-    <LinearGradient
+    <View style={styles.container}>
+    <ImageBackground
+   style={styles.backgroundImage}
+   source={require('../assets/15.png')}> 
+    {/* <LinearGradient
     colors={['#8FA5A8', '#8FA5A8', '#E6B1B1']}
       style={styles.container}
-    >
-   
-<Text style={{fontSize:50, fontStyle:'italic', color:'white', fontWeight:'bold', marginTop:50}}>Phone</Text> 
-<Text style={{paddingBottom: 20, textAlign:'center', color:'white', padding:30}}>Welcome to our hub for learning how to use your phone in today's society!
+    > */}
+
+<Image style={styles.pic} source={{uri: "https://cdn.dribbble.com/users/187497/screenshots/1291104/iphone.gif"}}/>   
+<Text style={{fontSize:50, fontStyle:'italic', color:'white', fontWeight:'bold', marginTop:0, marginLeft:130}}>Phone</Text> 
+
+<Text style={{paddingBottom: 20, textAlign:'center', color:'white', padding:5, fontSize:15,
+    fontWeight:'bold',
+    textAlign:'center'}}>Welcome to our hub for learning how to use your phone in today's society!
   Use the search bar below to ask your question, or click on any of our most
   frequently asked questions below!
   </Text>
 
-<Text style={{fontWeight: "bold", fontSize: 20, color:'white', padding:10}}>
+<Text style={{fontWeight: "bold", fontSize: 20, color:'white', padding:10, marginLeft:50}}>
 Frequently Asked Questions
 </Text>
         <SearchBar
@@ -118,7 +126,6 @@ Frequently Asked Questions
         />
       
 
-
 {/* 
 <View style={{flexDirection:'row', alignContent:'flex-end'}}>
 <AppButton title="FAQ1" onPress={() => alert("Currently not implemented")}/>
@@ -129,7 +136,9 @@ Frequently Asked Questions
 <AppButton title="FAQ1" onPress={() => alert("Currently not implemented")}/>
 <AppButton title="FAQ2" onPress={() => alert("Currently not implemented")}/>
  </View>    */}
-    </LinearGradient>
+    {/* </LinearGradient> */}
+    </ImageBackground>
+    </View>  
   );
 }
 
@@ -145,6 +154,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop:15
   },
   logo:{
     width: 400, 
@@ -153,31 +163,47 @@ const styles = StyleSheet.create({
     top:40
 
   },
+  pic:{
+    width: 200,
+    height: 100,
+    resizeMode: 'contain',
+    marginLeft:90
+  },
   text: {
     fontSize:20,
     color:'white',
     fontFamily: 'KohinoorDevanagari-Semibold',
     position:'absolute',
-    top:250
+    top:250,
+    color:'black',
+    fontSize:20,
+    fontWeight:'bold',
+    textAlign:'center'
   },
   button:{
-    backgroundColor:'#FF9F9F',
-    borderWidth:3,
-    borderColor:'white'
-,   borderRadius: 10,
+    backgroundColor:'#E23B53',
+    borderWidth:2,
+    borderColor:'white',
     paddingVertical: 10,
     paddingHorizontal: 30,
-    marginBottom: 20,
+    marginBottom: 30,
     margin:20,
-    color:'white'
+    color:'white',
+    fontSize:20,
+    fontWeight:'bold',
+    textAlign:'center'
   },
   buttontext:{
     color:'white', 
     textAlign:'center',
-    fontFamily: 'KohinoorDevanagari-Semibold'
+    fontFamily: 'KohinoorDevanagari-Semibold',
+    fontSize:20,
+    fontWeight:'bold',
+    textAlign:'center'
   },
   searchstyle: {
     width: 300,
+    marginBottom:10
   }
 
 

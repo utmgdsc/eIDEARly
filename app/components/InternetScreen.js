@@ -1,6 +1,6 @@
 
 import React, { useState, UseState, useEffect} from 'react';
-import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, SafeAreaView, FlatList, Alert} from 'react-native';
+import { Image, StyleSheet, Text, View, TouchableOpacity, Button, Pressable, SafeAreaView, FlatList, Alert, ImageBackground} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import SearchBar from "react-native-dynamic-search-bar";
 
@@ -88,20 +88,26 @@ function InternetScreen({ navigation, setMaterial }) {
 
 
   return (
-    <LinearGradient
+    <View style={styles.container}>
+    <ImageBackground
+   style={styles.backgroundImage}
+   source={require('../assets/13.png')}> 
+    {/* <LinearGradient
     colors={['#8FA5A8', '#8FA5A8', '#E6B1B1']}
       style={styles.container}
-    >
+    > */}
 
     
-
-<Text style={{fontSize:50, fontStyle:'italic', color:'white', fontWeight:'bold', marginTop:50}}>Internet</Text> 
-<Text style={{paddingBottom: 20, textAlign:'center', color:'white', padding:30}}>Welcome to our hub for learning how to use your phone in today's society!
+<Image style={styles.pic} source={{uri: "https://media.tenor.com/DJUPce9V1WMAAAAC/google-logo.gif"}}/>   
+<Text style={{fontSize:50, fontStyle:'italic', color:'white', fontWeight:'bold', marginLeft:100}}>Internet</Text> 
+<Text style={{paddingBottom: 20, textAlign:'center', color:'white', padding:5, fontSize:15,
+    fontWeight:'bold',
+    textAlign:'center' }}>Welcome to our hub for learning how to use your phone in today's society!
   Use the search bar below to ask your question, or click on any of our most
   frequently asked questions below!
   </Text>
 
-<Text style={{fontWeight: "bold", fontSize: 20, color:'white', padding:10}}>
+<Text style={{fontWeight: "bold", fontSize: 20, color:'white', padding:10, marginLeft:50}}>
 Frequently Asked Questions
 </Text>
         <SearchBar
@@ -134,7 +140,9 @@ Frequently Asked Questions
 <AppButton title="FAQ1" onPress={() => alert("Currently not implemented")}/>
 <AppButton title="FAQ2" onPress={() => alert("Currently not implemented")}/>
  </View>    */}
-    </LinearGradient>
+    {/* </LinearGradient> */}
+    </ImageBackground>
+    </View>  
   );
 }
 
@@ -166,15 +174,17 @@ const styles = StyleSheet.create({
     top:250
   },
   button:{
-    backgroundColor:'#FF9F9F',
-    borderWidth:3,
-    borderColor:'white'
-,   borderRadius: 10,
+    backgroundColor:'#468B91',
+    borderWidth:2,
+    borderColor:'white',
     paddingVertical: 10,
     paddingHorizontal: 30,
-    marginBottom: 20,
+    marginBottom: 30,
     margin:20,
-    color:'white'
+    color:'white',
+    fontSize:20,
+    fontWeight:'bold',
+    textAlign:'center'
   },
   buttontext:{
     color:'white', 
@@ -183,7 +193,14 @@ const styles = StyleSheet.create({
   },
   searchstyle: {
     width: 300,
-  }
+    marginBottom:30
+  },
+  pic:{
+    width: 200,
+    height: 100,
+    resizeMode: 'contain',
+    marginLeft:90
+  },
 
 
 });
