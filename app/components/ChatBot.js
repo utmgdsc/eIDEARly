@@ -4,7 +4,7 @@ import {ScrollView, ImageBackground, Image, StyleSheet, Text, View, TouchableOpa
 // import { ScrollView } from "react-native-gesture-handler";
 
 
-export default function Home() {
+export default function ChatBot() {
   const [questionInput, setquestionInput] = useState("");
   const [result, setResult] = useState("result");
   
@@ -13,7 +13,7 @@ export default function Home() {
     let headersList = {
       "Accept": "*/*",
       "Content-Type": "application/json",
-      "Authorization": "Bearer " + process.env.TOKEN
+      "Authorization": "Bearer " + "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"
 
      }
      

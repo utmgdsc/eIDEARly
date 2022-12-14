@@ -11,7 +11,7 @@ import LandingPage from './components/LandingPage'
 import Feedback from './components/Feedback';
 import Slideshow from './components/Slideshow';
 import { LogBox } from 'react-native';
-import Home from './components/ChatBot';
+import ChatBot from './components/ChatBot';
 LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
 LogBox.ignoreAllLogs();//Ignore all log notifications
 
@@ -31,7 +31,7 @@ export default function App() {
         <Stack.Screen name="Phone" component={(props) => <PhoneScreen setMaterial={setMaterial} {...props}/>}/>
         <Stack.Screen name="Internet" component={(props) => <InternetScreen setMaterial={setMaterial} {...props}/>}/>
         <Stack.Screen name="Apps" component={(props) => <AppScreen setMaterial={setMaterial} {...props}/>} />
-        <Stack.Screen name="chatbot" component={Home}/>
+        <Stack.Screen name="chatbot" component={ChatBot}/>
         <Stack.Screen name="MD" component={(props)=> <MaterialDisplay material={material} {...props}/>}/> 
 
       </Stack.Navigator>
